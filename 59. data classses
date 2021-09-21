@@ -1,0 +1,23 @@
+data class user(var name: String, var id: Long)
+
+fun main() {
+    var user1 = user("michael",243134)
+    println("${user1.name}, ${user1.id}")
+    
+    var user2 = user("michael",432423)
+    
+    println(user1.name == user2.name)            //specific
+    //print(user1.equals(user2))               //prints true or false          //checks overall
+    
+    println("user details: $user1")
+    
+    val user3 = user1.copy(name="raju shrivastav")
+    println("user details: $user3")
+    
+    println(user3.component1())         //prints first component, that is name 
+    println(user3.component2())        //prints second component, that is id
+    
+    var (name,id) = user3                          //components should be written is sequence   //we can create different variables with the helo of our objects
+    print("the id is $id, and name is $name")          
+    
+}
